@@ -7,9 +7,8 @@ import torch
 import numpy as np
 import wandb
 from dataset import CCAAudioEmotionDataset
-from model import initialize_backbone
+from model import initialize_backbone, make_feature_extractor
 from train_classifier import classification_training
-from helpers import make_feature_extractor
 from utils import make_save_dir
 
 

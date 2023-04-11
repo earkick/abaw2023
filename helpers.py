@@ -37,12 +37,6 @@ def switch_on_grads(model: torch.nn.Module):
     return model
 
 
-def make_feature_extractor(args: Dict, backbone=None):
-    feature_extractor_class = feature_extractor_registry[args["feature_extractor_type"]]
-    model_params = extract_model_opts(args, feature_extractor_class)
-    return feature_extractor_class(backbone, **model_params)
-
-
 def early_stopping(loss_value: float, epoch: int,
                    best_early_stopping_value: float,
                    early_stop_counter: int,
